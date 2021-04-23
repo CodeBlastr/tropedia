@@ -55,6 +55,8 @@ It may take several minutes when you launch it for the first time as it will bui
 >strapi_1  | ???????????????????????????????
 >```
 
+Visit [http://localhost:1337/admin](http://localhost:1337/admin) to open the Strapi UI. You will be prompted to setup a new admin user.
+
 ### Add user roles (only for first time setup)
 After setting up your first admin user you will have to create the three user roles specific to Tropedia. To do that, follow these steps:
 1. Login to Strapi admin UI (http://localhost:1337/admin) using your newly created administrator user and password.
