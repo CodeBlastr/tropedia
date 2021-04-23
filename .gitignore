@@ -1,1 +1,5 @@
+# local mongodb data
 data/
+
+# macOS
+.DS_Store
