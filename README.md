@@ -68,7 +68,7 @@ After setting up your first admin user you will have to create the three user ro
     - *Restricted*
 5. Finally, click on the **Advanced Settings** menu option (under **USERS AND PERMISSIONS PLUGIN**) and set *Editor* as the *Default role for authenticated users* and then click on the **Save** button.
 
-## 2. Setup the Nuxt.js Web App
+## 3. Setup the Nuxt.js Web App
 
 NOTE: Don't terminate the strapi process. You will have to run the client in a separate terminal instance.
 
