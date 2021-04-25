@@ -1,12 +1,9 @@
 <template>
-  <b-container class="mt-5">
-    <div v-if="article">
+  <b-container class="mt-2">
+    <div v-if="article" class="my-3 p-3 bg-white rounded shadow">
       <h1 class="title">
         {{ article.title }}
       </h1>
-      <p class="mt-5 font-bold">
-        written by {{ article.author.username }}
-      </p>
       <div class="my-5" v-html="$md.render(article.content)" />
     </div>
   </b-container>

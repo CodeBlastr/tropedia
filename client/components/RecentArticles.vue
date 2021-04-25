@@ -1,11 +1,11 @@
 <template>
-  <div class="my-3 p-3 bg-white rounded box-shadow">
-    <h6 class="border-bottom border-gray pb-2 mb-0">
+  <div class="my-3 p-3 bg-white rounded shadow">
+    <h4 class="border-bottom border-gray pb-2 mb-0">
       Recent Articles
-    </h6>
+    </h4>
     <div v-for="a in articles" :key="a._id" class="media text-muted pt-3">
       <img data-src="" alt="" class="mr-2 rounded">
-      <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+      <p class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">
         <nuxt-link :to="getArticleRoute(a)">
           <strong class="d-block text-gray-dark">{{ a.title }}</strong>
         </nuxt-link>

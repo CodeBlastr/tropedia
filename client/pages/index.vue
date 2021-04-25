@@ -1,14 +1,13 @@
 <template>
-  <div class="main-area">
+  <div>
     <b-container>
       <RecentArticles />
     </b-container>
   </div>
 </template>
 
-<style scoped>
-.main-area {
-  margin: 0 auto;
-  display: flex;
+<style>
+body {
+  background-color: #f8f9fa;
 }
 </style>
