@@ -40,6 +40,8 @@ export default {
     '@nuxtjs/axios',
     // https://strapi.nuxtjs.org/setup
     '@nuxtjs/strapi',
+    // https://www.npmjs.com/package/@nuxtjs/markdownit
+    '@nuxtjs/markdownit'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -52,5 +54,17 @@ export default {
   // Strapi options
   strapi: {
     entities: ['pages'],
+  },
+
+  // [optional] markdownit options
+  // See https://github.com/markdown-it/markdown-it
+  markdownit: {
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    // use: [
+    //  'markdown-it-div',
+    //  'markdown-it-attrs'
+    // ]
   }
 }

@@ -6,7 +6,9 @@
     <div v-for="a in articles" :key="a._id" class="media text-muted pt-3">
       <img data-src="" alt="" class="mr-2 rounded">
       <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
-        <strong class="d-block text-gray-dark">{{ a.title }}</strong>
+        <nuxt-link :to="getArticleRoute(a)">
+          <strong class="d-block text-gray-dark">{{ a.title }}</strong>
+        </nuxt-link>
         {{ a.description }}
       </p>
     </div>
@@ -37,6 +39,11 @@ export default {
   activated () {
     if (this.$fetchState.timestamp <= Date.now() - 30000) {
       this.$fetch()
+    }
+  },
+  methods: {
+    getArticleRoute (article) {
+      return `/articles/${article.slug}`
     }
   }
 }
