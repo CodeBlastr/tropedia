@@ -28,14 +28,6 @@ export default {
   async fetch () {
     this.articles = await this.$strapi.find('articles', { _limit: 5, _sort: 'published_at:desc' })
   },
-  computed: {
-    isAuthenticated () {
-      return this.$strapi.user != null
-    },
-    user () {
-      return (this.isAuthenticated) ? this.$strapi.user : null
-    }
-  },
   activated () {
     if (this.$fetchState.timestamp <= Date.now() - 30000) {
       this.$fetch()
