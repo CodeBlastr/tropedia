@@ -18,7 +18,7 @@
     "strapi-plugin-content-type-builder": "3.6.0",
     "strapi-plugin-email": "3.6.0",
     "strapi-plugin-i18n": "3.6.0",
-    "strapi-plugin-sync-roles-permissions": "0.4.1",
+    "strapi-plugin-sync-roles-permissions": "ghostspook/strapi-plugin-sync-roles-permissions",
     "strapi-plugin-upload": "3.6.0",
     "strapi-plugin-users-permissions": "3.6.0",
     "strapi-utils": "3.6.0"

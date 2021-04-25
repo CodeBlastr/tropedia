@@ -902,7 +902,7 @@
     "@babel/helper-validator-identifier" "^7.12.11"
     to-fast-properties "^2.0.0"
 
-"@buffetjs/core@3.3.5":
+"@buffetjs/core@3.3.5", "@buffetjs/core@^3.3.4":
   version "3.3.5"
   resolved "https://registry.yarnpkg.com/@buffetjs/core/-/core-3.3.5.tgz#45975b00b4a694cb04b9d53bf2a242149f573753"
   integrity sha512-wsPslYhOrb3fjiMzlqfb3NXnkuz5Jwe5hgA97gmHeCJsfWJ71AoxZ22LgQCSlElwI8elg3rsWDQJ+gWQ5gZv8w==
@@ -1358,6 +1358,11 @@
   version "7.0.7"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.7.tgz#98a993516c859eb0d5c4c8f098317a9ea68db9ad"
   integrity sha512-cxWFQVseBm6O9Gbw1IWb8r6OS4OhSt3hPZLkFApLjM8TEXROBuQGLAH2i2gZpcXdLBIrpXuTDhH7Vbm1iXmNGA==
+
+"@types/lodash@^4.14.165":
+  version "4.14.168"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.168.tgz#fe24632e79b7ade3f132891afff86caa5e5ce008"
+  integrity sha512-oVfRvqHV/V6D1yifJbVRU3TMp8OT6o6BG+U9MkwuJ3U8/CsDHvalRpsxBqivn71ztOFZBTfJMvETbqHiaNSj7Q==
 
 "@types/minimatch@*":
   version "3.0.4"
@@ -5760,7 +5765,7 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lodash-es@^4.17.11, lodash-es@^4.17.14:
+lodash-es@^4.17.11, lodash-es@^4.17.14, lodash-es@^4.17.15:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash-es/-/lodash-es-4.17.21.tgz#43e626c46e6591b7750beb2b50117390c609e3ee"
   integrity sha512-mKnC+QJ9pWVzv+C4/U3rRsHapFfHvQFoFB92e52xeyGMcX6/OlIl78je1u8vePzYZSkkogMPJ2yjxxsb89cxyw==
@@ -6387,6 +6392,11 @@ nan@^2.12.1:
   version "2.14.2"
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.2.tgz#f5376400695168f4cc694ac9393d0c9585eeea19"
   integrity sha512-M2ufzIiINKCuDfBSAUr1vWQ+vuVcA9kqx8JJUsbQi6yf1uGRyb7HfpdfUr5qLXf3B/t8dPvcjhKMmlfnP47EzQ==
+
+nanoclone@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/nanoclone/-/nanoclone-0.2.1.tgz#dd4090f8f1a110d26bb32c49ed2f5b9235209ed4"
+  integrity sha512-wynEP02LmIbLpcYw8uBKpcfF6dmg2vcpKqxeH5UcoKEYdExslsdUA4ugFauuaeYdTB76ez6gJW8XAZ6CgkXYxA==
 
 nanoid@^3.1.22:
   version "3.1.22"
@@ -7210,7 +7220,7 @@ property-expr@^1.5.0:
   resolved "https://registry.yarnpkg.com/property-expr/-/property-expr-1.5.1.tgz#22e8706894a0c8e28d58735804f6ba3a3673314f"
   integrity sha512-CGuc0VUTGthpJXL36ydB6jnbyOf/rAHFvmVrJlH+Rg0DqqLFQGAP6hIaxD/G0OAmBJPhXDHuEJigrp0e0wFV6g==
 
-property-expr@^2.0.2:
+property-expr@^2.0.2, property-expr@^2.0.4:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/property-expr/-/property-expr-2.0.4.tgz#37b925478e58965031bb612ec5b3260f8241e910"
   integrity sha512-sFPkHQjVKheDNnPvotjQmm3KD3uk1fWKUN7CrpdbwmUx3CrG3QiM8QpTSimvig5vTXmTvjz7+TDvXOI9+4rkcg==
@@ -9064,6 +9074,15 @@ strapi-plugin-i18n@3.6.0:
     pluralize "8.0.0"
     strapi-utils "3.6.0"
 
+strapi-plugin-sync-roles-permissions@ghostspook/strapi-plugin-sync-roles-permissions:
+  version "0.4.1"
+  resolved "https://codeload.github.com/ghostspook/strapi-plugin-sync-roles-permissions/tar.gz/e26165f913162174ca2696dceab76594c0fe61af"
+  dependencies:
+    "@buffetjs/core" "^3.3.4"
+    strapi-utils "^3.4.6"
+    styled-components "^5.2.1"
+    yup "^0.32.9"
+
 strapi-plugin-upload@3.6.0:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/strapi-plugin-upload/-/strapi-plugin-upload-3.6.0.tgz#ba8d57424b219d2a31770ed09fb524ef2e746eee"
@@ -9144,7 +9163,7 @@ strapi-provider-upload-local@3.6.0:
   resolved "https://registry.yarnpkg.com/strapi-provider-upload-local/-/strapi-provider-upload-local-3.6.0.tgz#508cbce4039e8912b09b5116a4983da559a9f09f"
   integrity sha512-YLmdrGBWYHu33xq13tEgcx6i+lnqo5Qra15kX+OtbivhKXMMEBBQLk2Nh2oLy3tr+z3zSFWu6NQOljsVTNn/HQ==
 
-strapi-utils@3.6.0:
+strapi-utils@3.6.0, strapi-utils@^3.4.6:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/strapi-utils/-/strapi-utils-3.6.0.tgz#0b608c95170dd2687d6ab93845cfa007d27d08d2"
   integrity sha512-UgXejSAgOGKsN99c7B/dslV5UJTFIxHXYOKlKEomQWLvK3cUxqN4T9maUxbncyyMvZ/QIvUkyjRuRv71DndNbg==
@@ -9370,7 +9389,7 @@ style-loader@^0.23.1:
     loader-utils "^1.1.0"
     schema-utils "^1.0.0"
 
-styled-components@^5.2.3:
+styled-components@^5.2.1, styled-components@^5.2.3:
   version "5.2.3"
   resolved "https://registry.yarnpkg.com/styled-components/-/styled-components-5.2.3.tgz#752669fd694aac10de814d96efc287dde0d11385"
   integrity sha512-BlR+KrLW3NL1yhvEB+9Nu9Dt51CuOnHoxd+Hj+rYPdtyR8X11uIW9rvhpy3Dk4dXXBsiW1u5U78f00Lf/afGoA==
@@ -10329,4 +10348,17 @@ yup@^0.27.0:
     lodash "^4.17.11"
     property-expr "^1.5.0"
     synchronous-promise "^2.0.6"
+    toposort "^2.0.2"
+
+yup@^0.32.9:
+  version "0.32.9"
+  resolved "https://registry.yarnpkg.com/yup/-/yup-0.32.9.tgz#9367bec6b1b0e39211ecbca598702e106019d872"
+  integrity sha512-Ci1qN+i2H0XpY7syDQ0k5zKQ/DoxO0LzPg8PAR/X4Mpj6DqaeCoIYEEjDJwhArh3Fa7GWbQQVDZKeXYlSH4JMg==
+  dependencies:
+    "@babel/runtime" "^7.10.5"
+    "@types/lodash" "^4.14.165"
+    lodash "^4.17.20"
+    lodash-es "^4.17.15"
+    nanoclone "^0.2.1"
+    property-expr "^2.0.4"
     toposort "^2.0.2"
