@@ -28,7 +28,7 @@ docker-compose pull
 
 Run the stack.
 ```
-docker-compose up -d
+docker-compose up
 ```
 
 It may take several minutes when you launch it for the first time as it will build the admin UI and complete its setup. It is important to let this process finish. You will know it is ready when you get this message:
@@ -57,16 +57,13 @@ It may take several minutes when you launch it for the first time as it will bui
 
 Visit [http://localhost:1337/admin](http://localhost:1337/admin) to open the Strapi UI. You will be prompted to setup a new admin user.
 
-### Add user roles (only for first time setup)
-After setting up your first admin user you will have to create the three user roles specific to Tropedia. To do that, follow these steps:
-1. Login to Strapi admin UI (http://localhost:1337/admin) using your newly created administrator user and password.
-2. On the left side menu bar click on the **Setings** menu option.
-3. Click on the **Roles** menu under the **USERS AND PERMISSIONS PLUGIN** group.
-4. You will see there are 2 default roles: Authenticated and Public. Go ahead and create the following Roles using the **+ AddNew Role** button:
-    - *Editor*
-    - *Moderator*
-    - *Restricted*
-5. Finally, click on the **Advanced Settings** menu option (under **USERS AND PERMISSIONS PLUGIN**) and set *Editor* as the *Default role for authenticated users* and then click on the **Save** button.
+### Add roles and permissions
+
+After setting up your first admin user you will have to import the roles and permissions into Strapi. To do that, follow these steps:
+1. Login to Strapi admin UI (http://localhost:1337/admin).
+2. On the **Browse** button under **Sync Roles And Permissions**.
+3. Browse to `./app/strapi-roles-and-permissions.json` and select it.
+4. Click on the **Sync Roles And Permissions** button.
 
 ## 3. Setup the Nuxt.js Web App
 
