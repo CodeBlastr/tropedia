@@ -35,6 +35,11 @@ export default {
       return this.$route.query.text
     }
   },
+  watch: {
+    async searchText (value) {
+      await this.$fetch()
+    }
+  },
   methods: {
     getArticleRoute (article) {
       return `/articles/${article.slug}`
