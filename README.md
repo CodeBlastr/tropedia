@@ -61,9 +61,14 @@ Visit [http://localhost:1337/admin](http://localhost:1337/admin) to open the Str
 
 After setting up your first admin user you will have to import the roles and permissions into Strapi. To do that, follow these steps:
 1. Login to Strapi admin UI (http://localhost:1337/admin).
-2. On the **Browse** button under **Sync Roles And Permissions**.
-3. Browse to `./app/strapi-roles-and-permissions.json` and select it.
-4. Click on the **Sync Roles And Permissions** button.
+2. Click on the **Sync Roles And Permissions** menu option on the left side navigation bar.
+3. Click on the **Browse** button under **Sync Roles And Permissions**, then browse to the `./app/strapi-roles-and-permissions.json` file and select it.
+5. Then, click on the **Sync Roles And Permissions** button.
+
+### Setup default role for new users
+1. Click on the **Setings** menu option on the left side navigation bar.
+2. Finally, click on the **Roles** link under the **USERS AND PERMISSIONS PLUGIN** group.
+Click on the **Advanced Settings** menu option (under the **USERS AND PERMISSIONS PLUGIN** group), then set *Editor* as the *Default role for authenticated users* and then click on the **Save** button.
 
 ## 3. Setup the Nuxt.js Web App
 
