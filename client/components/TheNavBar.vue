@@ -36,7 +36,10 @@
                 Sign Out
               </b-dropdown-item>
             </b-nav-item-dropdown>
-            <b-nav-item v-else href="#" to="/login">
+            <b-nav-item v-if="!isAuthenticated" href="#" to="/register">
+              Sign up
+            </b-nav-item>
+            <b-nav-item v-if="!isAuthenticated" href="#" to="/login">
               Sign in
             </b-nav-item>
           </b-navbar-nav>
