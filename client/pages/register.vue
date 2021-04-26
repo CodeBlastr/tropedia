@@ -1,47 +1,57 @@
 <template>
-  <div class="w-4/5 mx-auto md:w-1/2 text-center my-12">
-    <div v-show="error !== ''" class="p-3 border">
-      <p>{{ error }}</p>
-    </div>
-    <h1 class="font-bold text-2xl md:text-4xl mt-5">
-      Register
-    </h1>
-    <form @submit="createUser">
-      <div>
-        <input
-          v-model="email"
-          class="p-3 my-5 border w-full"
-          type="email"
-          placeholder="email"
-        >
-      </div>
-      <div>
-        <input
-          v-model="username"
-          class="p-3 my-5 border w-full"
-          type="text"
-          placeholder="username"
-        >
-      </div>
-      <div>
-        <input
-          v-model="password"
-          class="p-3 my-5 border w-full"
-          type="password"
-          placeholder="password"
-        >
-      </div>
-      <div>
-        <button
-          class="button--green"
-          :disabled="email === '' || password === '' || username === ''"
-          type="submit"
-        >
-          Signup
-        </button>
-      </div>
-    </form>
-  </div>
+  <b-container>
+    <b-row align-h="center">
+      <b-col cols="4" class="mt-5">
+        <div v-show="error !== ''" class="text-center text-danger">
+          <p>{{ error }}</p>
+        </div>
+        <b-card title="Sign Up">
+          <div>
+            <b-form @submit="createUser">
+              <b-form-group
+                id="input-group-1"
+                label="Email address:"
+                label-for="email"
+              >
+                <b-form-input
+                  id="email"
+                  v-model="email"
+                  type="email"
+                  required
+                />
+              </b-form-group>
+
+              <b-form-group
+                id="input-group-2"
+                label="Name:"
+                label-for="name"
+              >
+                <b-form-input
+                  id="name"
+                  v-model="username"
+                  type="text"
+                  required
+                />
+              </b-form-group>
+
+              <b-form-group id="input-group-3" label="Password:" label-for="input-2">
+                <b-form-input
+                  id="input-2"
+                  v-model="password"
+                  type="password"
+                  required
+                />
+              </b-form-group>
+
+              <b-button type="submit" variant="primary" :disabled="email === '' || password === '' || username === ''">
+                Register
+              </b-button>
+            </b-form>
+          </div>
+        </b-card>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 <script>
 export default {
