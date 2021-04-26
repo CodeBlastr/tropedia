@@ -4,6 +4,14 @@
       <h1 class="title">
         {{ article.title }}
       </h1>
+      <div class="mt-2 main-img-container">
+        <img
+          v-if="article.image"
+          :src="`http://localhost:1337${article.image.url}`"
+          class="main-img"
+        >
+      </div>
+
       <div class="my-5" v-html="$md.render(article.content)" />
     </div>
   </b-container>
@@ -22,3 +30,13 @@ export default {
   }
 }
 </script>
+
+<style>
+
+.main-img {
+  object-fit: cover;
+  height: 600px;
+  width:max-content;
+}
+
+</style>
