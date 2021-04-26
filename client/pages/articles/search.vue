@@ -13,9 +13,6 @@
           {{ a.description }}
         </p>
       </div>
-      <small class="d-block text-right mt-3">
-        <a href="#">All updates</a>
-      </small>
     </div>
   </b-container>
 </template>
@@ -28,7 +25,7 @@ export default {
     }
   },
   async fetch () {
-    this.articles = await this.$strapi.find('articles', { _limit: 5, _q: this.searchText })
+    this.articles = await this.$strapi.find('articles', { _limit: 50, _q: this.searchText })
   },
   computed: {
     searchText () {
