@@ -1,39 +1,44 @@
 <template>
-  <div class="w-4/5 mx-auto md:w-1/2 text-center my-12">
-    <div v-show="error !== ''" class="p-3 border">
-      <p>{{ error }}</p>
-    </div>
-    <h1 class="font-bold text-2xl md:text-4xl mt-5">
-      Login
-    </h1>
-    <form @submit="loginUser">
-      <div>
-        <input
-          v-model="identifier"
-          class="p-3 my-5 border w-full"
-          type="email"
-          placeholder="email"
-        >
-      </div>
-      <div>
-        <input
-          v-model="password"
-          class="p-3 my-5 border w-full"
-          type="password"
-          placeholder="password"
-        >
-      </div>
-      <div>
-        <button
-          :disabled="identifier === '' || password === ''"
-          class="button--green"
-          type="submit"
-        >
-          Login
-        </button>
-      </div>
-    </form>
-  </div>
+  <b-container>
+    <b-row align-h="center">
+      <b-col cols="4" class="mt-5">
+        <div v-show="error !== ''" class="text-center text-danger">
+          <p>{{ error }}</p>
+        </div>
+        <b-card title="Sign In">
+          <div>
+            <b-form @submit="loginUser">
+              <b-form-group
+                id="input-group-1"
+                label="Email address:"
+                label-for="email"
+              >
+                <b-form-input
+                  id="email"
+                  v-model="identifier"
+                  type="email"
+                  required
+                />
+              </b-form-group>
+
+              <b-form-group id="input-group-2" label="Password:" label-for="input-2">
+                <b-form-input
+                  id="input-2"
+                  v-model="password"
+                  type="password"
+                  required
+                />
+              </b-form-group>
+
+              <b-button type="submit" variant="primary">
+                Login
+              </b-button>
+            </b-form>
+          </div>
+        </b-card>
+      </b-col>
+    </b-row>
+  </b-container>
 </template>
 <script>
 export default {
@@ -63,4 +68,3 @@ export default {
   }
 }
 </script>
-<style></style>
