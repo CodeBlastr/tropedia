@@ -19,7 +19,7 @@ The development setup uses 3 docker containers:
 
 Clone the repo locally.
 ```
-git clone https://github.com/CodeBlastr/tropedia
+git clone https://github.com/CodeBlastr/tropedia.git
 ```
 
 ## 2. Setup the Strapi and MongoDB services
