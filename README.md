@@ -70,8 +70,7 @@ After setting up your first admin user you will have to import the roles and per
 
 ### Setup default role for new users
 1. Click on the **Setings** menu option on the left side navigation bar.
-2. Finally, click on the **Roles** link under the **USERS AND PERMISSIONS PLUGIN** group.
-Click on the **Advanced Settings** menu option (under the **USERS AND PERMISSIONS PLUGIN** group), then set *Editor* as the *Default role for authenticated users* and then click on the **Save** button.
+2. Finally, click on the **Advanced Settings** menu option (under the **USERS AND PERMISSIONS PLUGIN** group), then set *Editor* as the *Default role for authenticated users* and then click on the **Save** button.
 
 ## 3. Open the frontend
 
