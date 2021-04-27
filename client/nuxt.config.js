@@ -41,7 +41,9 @@ export default {
     // https://strapi.nuxtjs.org/setup
     '@nuxtjs/strapi',
     // https://www.npmjs.com/package/@nuxtjs/markdownit
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    // https://strapi.nuxtjs.org/proxy
+    '@nuxtjs/proxy'
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -51,9 +53,22 @@ export default {
   build: {
   },
 
+  // https://strapi.nuxtjs.org/proxy
+  // Used for development only
+  proxy: {
+    '/api': {
+      target: 'http://strapi:1337',
+      pathRewrite: {
+        '^/api': '/'
+      }
+    }
+  },
+
   // Strapi options
   strapi: {
     entities: ['pages'],
+    url: '/api'   // TO DO: Enable production env variable
+                  // https://strapi.nuxtjs.org/proxy
   },
 
   // [optional] markdownit options
