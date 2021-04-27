@@ -1,16 +1,19 @@
 # Folders and Components
 
-- **./app**: REST API built with [Strapi](https://strapi.io/). It runs in a docker container.
-- **./client**: Server-Side-Rendered Web Application built with [Nuxt.js](https://nuxtjs.org/). Runs using npm.
-- **./data**: This folder is not stored in the repo, it gets created automatically by the [MongoDB](https://www.mongodb.com/) service when it is launched for the first time. MongoDb runs in a docker container.
-
+- ``app/``: REST API built with [Strapi](https://strapi.io/).
+- ``client/``: Frontend built as a Server-Side-Rendered (SSR) Web Application using [Nuxt.js](https://nuxtjs.org/).
+- ``./data``: This folder is not stored in the repo, it gets created automatically by the [MongoDB](https://www.mongodb.com/) service when it is launched for the first time.
 
 # Development Setup
 
+The development setup uses 3 docker containers:
+- Strapi
+- MongoDB
+- Frontend
+
 ## Requirements
 
-- You will need to have [Docker Desktop](https://www.docker.com/products/docker-desktop) installed.
-- You will also need to have [Node.js](https://nodejs.org/en/) installed (version 14.16.1 preferrably) as well as npm.
+- To install and run locally you will only need [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
 ## 1. Clone the GitHub Repository
 
@@ -70,21 +73,6 @@ After setting up your first admin user you will have to import the roles and per
 2. Finally, click on the **Roles** link under the **USERS AND PERMISSIONS PLUGIN** group.
 Click on the **Advanced Settings** menu option (under the **USERS AND PERMISSIONS PLUGIN** group), then set *Editor* as the *Default role for authenticated users* and then click on the **Save** button.
 
-## 3. Setup the Nuxt.js Web App
+## 3. Open the frontend
 
-NOTE: Don't terminate the strapi process. You will have to run the client in a separate terminal instance.
-
-Install the dependencies.
-
-```
-cd client
-npm install
-```
-
-Launch the web application.
-
-```
-npm run dev
-```
-
-You are all set.
+Browse to http://localhost:3000
