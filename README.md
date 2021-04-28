@@ -1,61 +1,77 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+# Folders and Components
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+- ``app/``: REST API built with [Strapi](https://strapi.io/).
+- ``client/``: Frontend built as a Server-Side-Rendered (SSR) Web Application using [Nuxt.js](https://nuxtjs.org/).
+- ``./data``: This folder is not stored in the repo, it gets created automatically by the [MongoDB](https://www.mongodb.com/) service when it is launched for the first time.
 
-## About Laravel
+# Development Setup
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+The development setup uses 3 docker containers:
+- Strapi
+- MongoDB
+- Frontend
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requirements
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- To install and run locally you will only need [Docker Desktop](https://www.docker.com/products/docker-desktop).
 
-## Learning Laravel
+## 1. Clone the GitHub Repository
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Clone the repo locally.
+```
+git clone https://github.com/CodeBlastr/tropedia.git
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## 2. Setup the Strapi and MongoDB services
 
-## Laravel Sponsors
+Pull the latest images.
+```
+docker-compose pull
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Run the stack.
+```
+docker-compose up
+```
 
-### Premium Partners
+It may take several minutes when you launch it for the first time as it will build the admin UI and complete its setup. It is important to let this process finish. You will know it is ready when you get this message:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+>```
+>strapi_1  |  Project information
+>strapi_1  | 
+>strapi_1  | ?????????????????????????????????????????????????????????????????????????
+>strapi_1  | ? Time               ? Fri Apr 23 2021 03:28:30 GMT+0000 (Coordinated ? ?
+>strapi_1  | ? Launched in        ? 12423 ms                                         ?
+>strapi_1  | ? Environment        ? development                                      ?
+>strapi_1  | ? Process PID        ? 187                                              ?
+>strapi_1  | ? Version            ? 3.6.0 (node v12.20.1)                            ?
+>strapi_1  | ? Edition            ? Community                                        ?
+>strapi_1  | ?????????????????????????????????????????????????????????????????????????
+>strapi_1  | 
+>strapi_1  |  Actions available
+>strapi_1  | 
+>strapi_1  | One more thing...
+>strapi_1  | Create your first administrator ? by going to the administration panel at:
+>strapi_1  | 
+>strapi_1  | ???????????????????????????????
+>strapi_1  | ? http://localhost:1337/admin ?
+>strapi_1  | ???????????????????????????????
+>```
 
-## Contributing
+Visit [http://localhost:1337/admin](http://localhost:1337/admin) to open the Strapi UI. You will be prompted to setup a new admin user.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Add roles and permissions
 
-## Code of Conduct
+After setting up your first admin user you will have to import the roles and permissions into Strapi. To do that, follow these steps:
+1. Login to Strapi admin UI (http://localhost:1337/admin).
+2. Click on the **Sync Roles And Permissions** menu option on the left side navigation bar.
+3. Click on the **Browse** button under **Sync Roles And Permissions**, then browse to the `./app/strapi-roles-and-permissions.json` file and select it.
+5. Then, click on the **Sync Roles And Permissions** button.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Setup default role for new users
+1. Click on the **Setings** menu option on the left side navigation bar.
+2. Finally, click on the **Advanced Settings** menu option (under the **USERS AND PERMISSIONS PLUGIN** group), then set *Editor* as the *Default role for authenticated users* and then click on the **Save** button.
 
-## Security Vulnerabilities
+## 3. Open the frontend
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Browse to http://localhost:3000
